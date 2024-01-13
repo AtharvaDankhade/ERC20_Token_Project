@@ -3,7 +3,7 @@ import ABI from './WhitelistedToken.json';
 
 let selectedAccount;
 let nftContract;
-let contractAddress = "0x0651298b7679027E3AF87d7977EF992670535139";
+let contractAddress = "CONTRACT_ADDRESS";
 let isInitialize = false;
 
 export const init = async () => {
