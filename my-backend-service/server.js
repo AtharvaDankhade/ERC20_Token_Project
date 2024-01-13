@@ -5,9 +5,9 @@ const app = express();
 const port = 3000;
 
 // Connect to Ethereum using Infura (replace YOUR_INFURA_API_KEY with your actual API key)
-const provider = new ethers.providers.JsonRpcProvider('https://goerli.infura.io/v3/fc53e1fe9181421188a85a7df27f9431');
+const provider = new ethers.providers.JsonRpcProvider('');
 
-const contractAddress = '0xe31f618fea01732a962d2162c6e31ec326be995b';
+const contractAddress = 'CONTRACT_ADDRESS';
 const abi = [
 	{
 		"inputs": [
@@ -446,7 +446,7 @@ app.post('/mint', async (req, res) => {
     const { to, amount } = req.body;
     try {
 
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f';
+        const privateKey = '';
         const wallet = new ethers.Wallet(privateKey, provider);
 
         const contractWithSigner = contract.connect(wallet);
@@ -477,7 +477,7 @@ app.post('/whitelistAccount', async (req, res) => {
             return res.status(403).json({ error: 'Unauthorized' });
         }
 
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f';
+        const privateKey = '';
         const wallet = new ethers.Wallet(privateKey, provider);
 
         const contractWithSigner = contract.connect(wallet);
@@ -503,7 +503,7 @@ app.post('/unwhitelistAccount', async (req, res) => {
         if (senderAddress.toLowerCase() !== fetchedOwnerAddress.toLowerCase()) {
             return res.status(403).json({ error: 'Unauthorized' });
         }
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f';
+        const privateKey = '';
         const wallet = new ethers.Wallet(privateKey, provider);
 
         const contractWithSigner = contract.connect(wallet);
@@ -539,7 +539,7 @@ app.post('/distributeToWhitelist', async (req, res) => {
         if (senderAddress.toLowerCase() !== fetchedOwnerAddress.toLowerCase()) {
             return res.status(403).json({ error: 'Unauthorized' });
         }
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f';
+        const privateKey = '';
         const wallet = new ethers.Wallet(privateKey, provider);
 
         const contractWithSigner = contract.connect(wallet);
@@ -565,7 +565,7 @@ app.post('/lockTransfer', async (req, res) => {
         if (senderAddress.toLowerCase() !== fetchedOwnerAddress.toLowerCase()) {
             return res.status(403).json({ error: 'Unauthorized' });
         }
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f';
+        const privateKey = '';
         const wallet = new ethers.Wallet(privateKey, provider);
 
         const contractWithSigner = contract.connect(wallet);
@@ -590,7 +590,7 @@ app.post('/unlockTransfer', async (req, res) => {
         if (senderAddress.toLowerCase() !== fetchedOwnerAddress.toLowerCase()) {
             return res.status(403).json({ error: 'Unauthorized' });
         }
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f';
+        const privateKey = '';
         const wallet = new ethers.Wallet(privateKey, provider);
 
         const contractWithSigner = contract.connect(wallet);
@@ -607,7 +607,7 @@ app.post('/transfer', async (req, res) => {
 	const value = req.body.value;
 	const senderAddress = req.body.senderAddress;
     try {
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f'; // Replace with your private key
+        const privateKey = ''; // Replace with your private key
         const wallet = new ethers.Wallet(privateKey, provider);
         const contractWithSigner = contract.connect(wallet);
 
@@ -623,7 +623,7 @@ app.post('/transfer', async (req, res) => {
 app.post('/transferFrom', async (req, res) => {
     const { from, to, value } = req.body;
     try {
-        const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f'; // Replace with your private key
+        const privateKey = ''; // Replace with your private key
         const wallet = new ethers.Wallet(privateKey, provider);
         const contractWithSigner = contract.connect(wallet);
 
@@ -648,7 +648,7 @@ async function fetchOwnerAddress() {
 
 app.post('/lockToken/:symbol', async (req, res) => {
     const { symbol } = req.params;
-    const privateKey = 'b3944af79e8dc188eae5223908f4c3c9594a77b3cbe0b9c8130aa6bda879f11f'; 
+    const privateKey = ''; 
     const senderAddress = req.headers.senderaddress || req.body.senderAddress;
 
     if (!senderAddress) {
