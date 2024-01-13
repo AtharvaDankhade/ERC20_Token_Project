@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const ETHEREUM_RPC_URL = 'https://goerli.infura.io/v3/fc53e1fe9181421188a85a7df27f9431'; // Replace with your Infura project ID
+const ETHEREUM_RPC_URL = ''; // Replace with your Infura project ID
 
 async function fetchLatestBlockNumber() {
     try {
