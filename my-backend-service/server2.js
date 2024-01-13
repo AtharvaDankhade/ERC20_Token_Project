@@ -5,9 +5,9 @@ const app = express();
 const port = 8000;
 
 // Connect to Ethereum using Infura (replace YOUR_INFURA_API_KEY with your actual API key)
-const provider = new ethers.providers.JsonRpcProvider('https://goerli.infura.io/v3/fc53e1fe9181421188a85a7df27f9431');
+const provider = new ethers.providers.JsonRpcProvider('');
 
-const contractAddress = '0x9Ac25b614e1F5ff57ed4c3548738398fd52CaDFa';
+const contractAddress = '';
 const abi = [
 	{
 		"inputs": [
